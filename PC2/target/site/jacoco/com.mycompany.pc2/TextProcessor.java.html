@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TextProcessor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PC2</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.pc2</a> &gt; <span class="el_source">TextProcessor.java</span></div><h1>TextProcessor.java</h1><pre class="source lang-java linenums">package com.mycompany.pc2;
+
+public class TextProcessor {
+
+    // Constructor para JaCoCo
+<span class="fc" id="L6">    public TextProcessor() {</span>
+        // solo para cobertura
+<span class="fc" id="L8">    }</span>
+
+    public static String reverseAndCapitalize(String input) {
+        // Validación: texto nulo
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        if (input == null) {</span>
+<span class="fc" id="L13">            throw new IllegalArgumentException(&quot;El texto no puede ser nulo&quot;);</span>
+        }
+
+        // Validación: longitud máxima permitida
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (input.length() &gt; 1000) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;El texto excede el límite de 1000 caracteres&quot;);</span>
+        }
+
+        // Recortar espacios al inicio y final
+<span class="fc" id="L22">        String trimmed = input.trim();</span>
+
+        // Validación: vacío después del trim → solo espacios o vacío
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (trimmed.isEmpty()) {</span>
+<span class="fc" id="L26">            throw new IllegalArgumentException(&quot;El texto no puede estar vacío&quot;);</span>
+        }
+
+        // Invertir texto y convertir a mayúsculas
+<span class="fc" id="L30">        return new StringBuilder(trimmed).reverse().toString().toUpperCase();</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>
