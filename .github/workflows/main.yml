@@ -22,9 +22,11 @@ jobs:
 
     - name: Build with Maven (Tests + JaCoCo)
       run: mvn -B clean verify
+      working-directory: ./PC2
 
     - name: Upload JaCoCo Report
       uses: actions/upload-artifact@v4
       with:
         name: jacoco-report
-        path: target/site/jacoco/
+        path: PC2/target/site/jacoco/
+
