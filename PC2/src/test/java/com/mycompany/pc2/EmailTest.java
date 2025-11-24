@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EmailTest {
 
-    // Casos básicos de correo válido e inválido
     @Test void caso1_correoValido() {
         Email email = new Email();
         assertTrue(email.isValidEmail("gabriel.corrales@usil.pe"));
@@ -39,7 +38,6 @@ class EmailTest {
         assertFalse(email.isValidEmail("ga@briel@usil.pe"));
     }
 
-    // Tests para isValidLocalPart
     @Test void caso6_localIniciaConPunto() {
         Email email = new Email();
         assertFalse(email.isValidEmail(".user@gmail.com"));
@@ -60,7 +58,6 @@ class EmailTest {
         assertFalse(email.isValidEmail("user!name@gmail.com"));
     }
 
-    // Tests para isValidDomain
     @Test void caso10_dominioSinPunto() {
         Email email = new Email();
         assertFalse(email.isValidEmail("user@gmailcom"));
@@ -116,7 +113,6 @@ class EmailTest {
         assertTrue(email.isValidEmail("usuario@mail.server.com"));
     }
 
-    // Test extra para cubrir constructor explícito y JaCoCo
     @Test void caso21_constructorEjecutadoParaCobertura() {
         Email e = new Email();
         assertNotNull(e);
