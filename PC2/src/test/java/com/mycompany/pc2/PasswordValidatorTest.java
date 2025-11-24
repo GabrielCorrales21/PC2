@@ -35,8 +35,6 @@ public class PasswordValidatorTest {
         assertTrue(PasswordValidator.isValid("SuperContra#123"));
     }
 
-    // ✅ Cobertura adicional para JaCoCo ↓↓↓
-
     @Test
     void caso7_sinMinusculas() {
         assertFalse(PasswordValidator.isValid("SUPER123#"));
